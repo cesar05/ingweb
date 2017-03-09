@@ -8,6 +8,12 @@ public class Ciudad {
 	private String nombre;
 	private String codigoArea;
 	
+	public Ciudad(long codigo,String Nombre,String codigoArea){
+		this.codigo=codigo;
+		this.nombre=nombre;
+		this.codigoArea=codigoArea;
+	}
+	
 	public long getCodigo() {
 		return codigo;
 	}

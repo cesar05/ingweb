@@ -29,10 +29,15 @@ public class CiudadDAOImp implements CiudadDAO{
 			ps=con.prepareStatement("select * from ciudades");
 			rs=ps.executeQuery();
 			while(rs.next()){
-				Ciudad ciudad=new Ciudad();
+				Ciudad ciudad=new Ciudad(
+						Integer.parseInt((rs.getString("codigo"))),
+						rs.getString("nombre"),
+						rs.getString("codigoArea"));
+				/*
 				ciudad.setCodigo(Integer.parseInt((rs.getString("codigo"))));
 				ciudad.setNombre(rs.getString("nombre"));
 				ciudad.setCodigoArea(rs.getString("codigoArea"));
+				*/
 				lista.add(ciudad);
 			}
 		}
