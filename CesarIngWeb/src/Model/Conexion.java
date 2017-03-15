@@ -10,6 +10,11 @@ import java.sql.ResultSet;
  */
 
 import java.sql.SQLException;
+import java.util.List;
+
+import co.edu.udea.iw.dao.CiudadDAO;
+import co.edu.udea.iw.dao.impl.CiudadDAOImp;
+import co.edu.udea.iw.dto.Ciudad;
 /*
  * Esta clase realiza la conexion a la base de datos y permite realizar consultas e imprimir el resultado
  */
@@ -25,7 +30,7 @@ public class Conexion {
 	public Conexion(){		
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			this.conexion=DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcesar","root","root");						
+			this.conexion=DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcesar","root","");						
 		}
 		catch(ClassNotFoundException e){
 			System.out.println("ClassNotFoundException = "+e.getMessage());
@@ -70,7 +75,7 @@ public class Conexion {
 		Conexion co=new Conexion();
 		co.consultar("select * from ciudades");
 		co.imprimir();
-		co=null;
+		co=null;		
 	}
 	
 }

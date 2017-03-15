@@ -9,4 +9,5 @@ import co.edu.udea.iw.dto.Ciudad;
 public interface CiudadDAO {
 	//Entrega la lista de las ciudades
 	public List<Ciudad> obtener() throws MyException;
+	public Ciudad obtener(Long codigo) throws MyException;
 }

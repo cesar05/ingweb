@@ -10,7 +10,7 @@ public class Ciudad {
 	
 	public Ciudad(long codigo,String Nombre,String codigoArea){
 		this.codigo=codigo;
-		this.nombre=nombre;
+		this.nombre=Nombre;
 		this.codigoArea=codigoArea;
 	}
 	

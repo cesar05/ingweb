@@ -56,5 +56,53 @@ public class CiudadDAOImp implements CiudadDAO{
 		}
 		return lista;
 	}
+	
+	// Implementacion del metodo que me obtiene la ciudad con el codigo especificado en los parametros
+	@Override
+	public Ciudad obtener(Long codigo) throws MyException{
+		Connection con = null;
+	 	PreparedStatement ps = null;
+	 	ResultSet rs = null;
+	 	Ciudad ciudad=null;
+ 		try{
+ 			
+ 			con=DataSource.getConnection();
+ 			//El signo de interrogacion que hay al final de la consulta sera reemplazado por un parametro
+ 			//que sera escapeado antes de concatenarlo a la consulta para evitar inyeccion de codigo
+ 			ps = con.prepareStatement("select * from ciudades where codigo = ?;");
+ 			//pasamos variable a la consulta
+ 			ps.setLong(1,codigo);
+ 			//ejecutamos la consulta
+ 			rs=ps.executeQuery();
+ 			if(rs.next()){
+ 				//creamos el objeto ciudad con los datos obtenidos
+ 				ciudad=new Ciudad(
+						Integer.parseInt((rs.getString("codigo"))),
+						rs.getString("nombre"),
+						rs.getString("codigoArea"));			
+ 			} 			
+ 		}
+ 		catch (SQLException e)
+ 		{
+ 			throw new MyException("Error consultando", e);
+ 		}
+ 		//cerramos todas la conexiones abiertas
+ 		finally
+ 		{
+ 			try
+ 			{ 				
+ 				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(con!=null)con.close();
+ 			} 			
+ 			catch (SQLException e)
+ 			{
+ 				throw new MyException("Error cerrando", e);
+ 			}
+ 		}
+ 		
+		return ciudad;
+	}
+	
 
 }
