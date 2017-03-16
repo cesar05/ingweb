@@ -19,7 +19,7 @@ public class DataSource {
 			//Se indica el driver a utilizar
 			Class.forName("com.mysql.jdbc.Driver");
 			//se indica datos para login a la base de datos
-			con= DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcesar","root",""); 
+			con= DriverManager.getConnection("jdbc:mysql://localhost:3306/dbcesar","root","root"); 
 		}			
 		catch(ClassNotFoundException e){
 			throw new MyException("No fue posible la conexion",e);
