@@ -11,15 +11,20 @@ import exception.MyException;
  * author: César Muñoz Roldan
  */
 public class DataSource {
-	//variable que permite la conexion a la BD
+	//Permite la conexion a la BD
 	public static DataSource instancia=null;
+	
+	//Permite establecer conexiones a la BD
 	private SessionFactory factory=null;
+	
+	//Permite cargar el archivo de configuracion para Hibernate
 	private Configuration conf=new Configuration();
 	
 	private DataSource(){
 				
 	}
 	
+	//Obtener la instancia de clase DataSource
 	public static DataSource getConnection(){		
 		//se valida que no haya una instancia ya creada para la conexion
 		if(instancia==null){
@@ -29,7 +34,8 @@ public class DataSource {
 		}
 		return instancia;
 	}
-	//retorna una session(conexion) abierta a la base de datos
+	
+	//Retorna una session(conexion) abierta a la base de datos
 	public Session getSession()throws MyException{
 		try{
 			if(factory==null){

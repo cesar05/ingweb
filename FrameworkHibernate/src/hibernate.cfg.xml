@@ -12,5 +12,6 @@
     	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     	<!-- da la posibilidad de ver las sentencias de sql que Hibernate realiza en el motor -->
     	<property name="show_sql">true</property>
+    	<mapping resource="co/edu/udea/iw/dto/Ciudad.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

@@ -15,6 +15,10 @@ public class Ciudad {
 		this.codigoArea=codigoArea;
 	}
 	
+	public Ciudad(){
+		
+	}
+	
 	public long getCodigo() {
 		return codigo;
 	}
