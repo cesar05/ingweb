@@ -26,7 +26,7 @@ public class CiudadDAOImpTest {
  			fail(e.getMessage());
  		}			
 	}
-	
+	/*
 	@Test
 	public void testObtenerLong() {
 		fail("Not yet implemented");
@@ -51,5 +51,5 @@ public class CiudadDAOImpTest {
 	public void testInsertaroactualizar() {
 		fail("Not yet implemented");
 	}
-	
+	*/
 }
