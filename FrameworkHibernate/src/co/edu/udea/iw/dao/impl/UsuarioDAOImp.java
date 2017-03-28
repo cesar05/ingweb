@@ -42,6 +42,9 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		catch (HibernateException e){
 			throw new MyException("Error consultando usuarios",e);
 		}
+		finally{
+			if(session!=null)session.close();
+		}
 		return usuario;
 	}
 
