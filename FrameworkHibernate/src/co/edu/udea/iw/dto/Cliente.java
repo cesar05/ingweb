@@ -1,6 +1,8 @@
 package co.edu.udea.iw.dto;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 public class Cliente {
 	
@@ -15,6 +17,7 @@ public class Cliente {
 	private boolean Eliminado;
 	private Usuario usuarioElimina;	
 	private Date fechaEliminacion;
+	private Set<Direccion> direcciones;
 	
 	public String getCedula() {
 		return cedula;
@@ -81,6 +84,12 @@ public class Cliente {
 	}
 	public void setFechaEliminacion(Date fechaEliminacion) {
 		this.fechaEliminacion = fechaEliminacion;
+	}
+	public Set<Direccion> getDirecciones() {
+		return direcciones;
+	}
+	public void setDirecciones(Set<Direccion> direcciones) {
+		this.direcciones = direcciones;
 	}
 	
 		

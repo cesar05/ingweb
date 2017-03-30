@@ -29,13 +29,17 @@
             <column name="fechaEliminacion"/>
         </property>       
         <many-to-one name="usuarioCrea" class="co.edu.udea.iw.dto.Usuario" lazy="false" fetch="join">
-        	<column name="UsuarioCrea" not-null="true"/>
+        	<column name="UsuarioCrea" not-null="true" />
         </many-to-one>  
         <many-to-one name="usuarioModifica" class="co.edu.udea.iw.dto.Usuario" lazy="false" fetch="join">
-        	<column name="usuarioModifica" not-null="true"/>
+        	<column name="usuarioModifica" />
         </many-to-one>
         <many-to-one name="usuarioElimina" class="co.edu.udea.iw.dto.Usuario" lazy="false" fetch="join">
-        	<column name="usuarioElimina" not-null="true"/>
-        </many-to-one>                
+        	<column name="usuarioElimina" />
+        </many-to-one>
+        <set name="direcciones">
+        	<key column="Cliente"></key>
+        	<one-to-many class="co.edu.udea.iw.dto.Direccion"/>
+        </set>               
     </class>
 </hibernate-mapping>

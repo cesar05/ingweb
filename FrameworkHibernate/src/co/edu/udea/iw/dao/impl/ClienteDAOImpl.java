@@ -47,7 +47,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 			tx.commit();			
 		}
 		catch(HibernateException e){
-			throw new MyException("Error consultando clientes",e);			
+			throw new MyException("Error insertando cliente",e);			
 		}
 	}
 
