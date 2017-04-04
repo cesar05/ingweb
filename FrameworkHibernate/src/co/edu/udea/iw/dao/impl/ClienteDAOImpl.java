@@ -24,7 +24,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 		try{
 			session =DataSource.getConnection().getSession();
 			criteria =session.createCriteria(Cliente.class);
-			criteria.addOrder(Order.asc("FechaCreacion"));
+			criteria.addOrder(Order.asc("fechaCreacion"));
 			clientes=criteria.list();
 		}
 		catch(HibernateException e){

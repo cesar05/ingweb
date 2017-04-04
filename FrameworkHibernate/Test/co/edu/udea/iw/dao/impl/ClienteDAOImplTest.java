@@ -26,9 +26,11 @@ public class ClienteDAOImplTest {
 			//assertTrue(true);
 		}
 		catch(MyException e){
+			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
+	/*
 	@Test
 	public void guardar(){
 		ClienteDAO clienteDAO=null;
@@ -52,6 +54,6 @@ public class ClienteDAOImplTest {
 			fail(e.getMessage());			
 		}
 		
-	}
+	}*/
 
 }
