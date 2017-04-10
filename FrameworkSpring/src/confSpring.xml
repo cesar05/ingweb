@@ -42,4 +42,10 @@
 	<bean id="CiudadDAOImp" class="co.edu.udea.iw.dao.imp.CiudadDAOImp">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<bean id="UsuarioDAOImp" class="co.edu.udea.iw.dao.imp.UsuarioDAOImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ClienteDAOImp" class="co.edu.udea.iw.dao.imp.ClienteDAOImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 </beans>

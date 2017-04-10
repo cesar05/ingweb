@@ -1,15 +1,23 @@
 package exception;
 
 import org.apache.log4j.*;
+import org.apache.log4j.PropertyConfigurator;
+
 /*
 * author: César Muñoz Roldan
 */
 public class MyException extends Exception {
 
+	
 	private Logger log=Logger.getLogger(this.getClass());
+	//SE CONFIGURA EL LOG	
+	public static void fileConfig(){
+		PropertyConfigurator.configure("log4j.properties");
+	}
 	
 	public MyException() {
 		super();
+		this.fileConfig();
 		// TODO Auto-generated constructor stub
 	}	
 
@@ -21,6 +29,7 @@ public class MyException extends Exception {
 	public MyException(String message, Throwable cause) {
 		super(message, cause);
 		log.error(message,cause);
+		log.error(message);
 	}
 
 	public MyException(String message) {
