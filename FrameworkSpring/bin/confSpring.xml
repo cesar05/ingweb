@@ -48,4 +48,8 @@
 	<bean id="ClienteDAOImp" class="co.edu.udea.iw.dao.imp.ClienteDAOImp">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<bean id="clienteBL" class="co.edu.udea.iw.bl.ClienteBL">
+		<property name="clienteDAO" ref="ClienteDAOImp" />
+		<property name="usuarioDAO" ref="UsuarioDAOImp" />
+	</bean>
 </beans>

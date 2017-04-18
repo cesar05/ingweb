@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Ciudad;
+import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.dto.Usuario;
 import exception.MyException;
 
@@ -42,8 +43,19 @@ private SessionFactory sessionFactory;
 
 	@Override
 	public Usuario obtener(String login) throws MyException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Usuario usuario=null;
+		Session session=null;
+		try{			
+			session=sessionFactory.getCurrentSession(); 
+			Criteria criteria=session.createCriteria(Cliente.class);			
+			usuario=(Usuario)session.get(Usuario.class,login);
+		}
+		catch (HibernateException e) {
+			e.printStackTrace();
+			throw new MyException("Error consultando el usuario",e);
+		}
+		return usuario;
 	}
 	
 }

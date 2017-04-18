@@ -46,8 +46,19 @@ public class ClienteDAOImp implements ClienteDAO {
 	}
 
 	@Override
-	public void insertar(Cliente cliente) throws MyException {
-		// TODO Auto-generated method stub
+	public boolean insertar(Cliente cliente) throws MyException {
+		//Abrir transaccion en la BD		
+		Session session=null;
+		try{
+			//session=DataSource.getConnection().getSession();
+			session=sessionFactory.getCurrentSession(); 
+			Criteria criteria=session.createCriteria(Cliente.class);			
+			session.save(cliente);
+			return true;
+		}
+		catch (HibernateException e) {
+			throw new MyException("Error insertando cliente",e);
+		}
 		
 	}
 	

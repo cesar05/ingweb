@@ -13,5 +13,5 @@ public interface ClienteDAO {
 	 * Obtiene la lista de clientes ordenados por su fecha de creacion
 	 */
 	public List<Cliente> obtener() throws MyException;
-	public void insertar(Cliente cliente) throws MyException;
+	public boolean insertar(Cliente cliente) throws MyException;
 }
