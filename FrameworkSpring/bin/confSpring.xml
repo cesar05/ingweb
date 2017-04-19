@@ -52,4 +52,7 @@
 		<property name="clienteDAO" ref="ClienteDAOImp" />
 		<property name="usuarioDAO" ref="UsuarioDAOImp" />
 	</bean>
+	<bean id="usuarioBL" class="co.edu.udea.iw.bl.UsuarioBL">
+		<property name="usuarioDAO" ref="UsuarioDAOImp" />
+	</bean>
 </beans>

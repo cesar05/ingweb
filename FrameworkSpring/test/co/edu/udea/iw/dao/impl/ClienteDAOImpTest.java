@@ -18,7 +18,7 @@ import co.edu.udea.iw.dto.Cliente;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 //para decirle a spring donde esta el archivo de configuracion
-@ContextConfiguration(locations="classpath:confSpring.xml") // "classPath:confSpring.xml")
+@ContextConfiguration(locations="classpath:confSpring.xml")
 public class ClienteDAOImpTest {
 	
 	@Autowired
@@ -26,11 +26,11 @@ public class ClienteDAOImpTest {
 	
 	@Test
 	public void testObtener() {
-		//metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
+		//Metodo para para probar que si devuelva registros cuando hay datos en la base de datos
 		
  		List<Cliente> lista = null;
  		try{
- 			//instanciamos la clase que implementa el metodo para obtener los registros
+ 			//Instanciamos la clase que implementa el metodo para obtener los registros
  			lista = this.clienteDAO.obtener();
  			
  			//en caso de que haya mas de un registro confirmamos la prueba

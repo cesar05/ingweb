@@ -1,5 +1,4 @@
-package co.edu.udea.iw.dao.impl;
-
+package co.edu.udea.iw.bl;
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -22,46 +21,19 @@ import co.edu.udea.iw.dto.Usuario;
 
 //Para decirle a spring donde esta el archivo de configuracion
 @ContextConfiguration(locations="classpath:confSpring.xml") // "classPath:confSpring.xml")
-public class ClienteBLTest {
-	
+public class UsuarioBLTest {
 	@Autowired
-	ClienteBL clientebl;
+	UsuarioBL usuarioBL;
 		
 	@Test
-	public void testObtener(){
+	public void testLogin(){
 		//metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
-		
- 		List<Cliente> lista = null;
  		try{
- 			//instanciamos la clase que implementa el metodo para obtener los registros
- 			lista = this.clientebl.obtener();
- 			
- 			//en caso de que haya mas de un registro confirmamos la prueba
-			assertTrue(lista.size() >= 0);
+			assertTrue(usuarioBL.login("elver","1g0/KkFdhrmg1DYJWFdd2A=="));
  		}
  		catch(Exception e){
  			e.printStackTrace();
  			fail(e.getMessage());
  		}
 	}
-	
-	public void testGuardar(){
-		//Metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
-		
- 		Cliente Cliente = null;
- 		try{ 			
- 			assertTrue(this.clientebl.guardar(
- 					"1050",
- 					"Pedro Pablo", 
- 					"Jaramillo",
- 					"udea@udea.com",
- 					"800"));			
- 			
- 		}
- 		catch(Exception e){
- 			e.printStackTrace();
- 			fail(e.getMessage());
- 		}
-	}
-
 }

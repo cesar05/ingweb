@@ -41,7 +41,8 @@ public class CiudadDAOImp implements CiudadDAO{
 		}
 		return lista;
 	}
-	//metodo que obtiene los datos de una ciudad 
+	
+	//Metodo que obtiene los datos de una ciudad 
 	@Override
 	public Ciudad obtener(Long codigo) throws MyException {
 		Ciudad ciudad=null;

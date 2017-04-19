@@ -28,13 +28,14 @@ public class UsuarioDAOImpTest {
 	
 	@Test
 	public void testObtener() {
-		//metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
+		//Metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
 		
  		List<Usuario> lista = null;
  		try{
  			//instanciamos la clase que implementa el metodo para obtener los registros
  			//this.ciudadDAO = new CiudadDAOImp();
  			lista = this.usuarioDAO.obtener();
+ 			//System.out.println(lista.get(0).getNombre());
  			//en caso de que haya mas de un registro confirmamos la prueba
 			assertTrue(lista.size() > 0);
  		}
@@ -43,15 +44,15 @@ public class UsuarioDAOImpTest {
  			fail(e.getMessage());
  		}			
 	}
+	
 	@Test
 	public void testObtenerUsuario() {
-		//metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
+		//Metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
 		
  		Usuario usuario=null;
  		try{
- 			//instanciamos la clase que implementa el metodo para obtener los registros
- 			//this.ciudadDAO = new CiudadDAOImp();
- 			usuario = this.usuarioDAO.obtener("1046");
+ 			//Instanciamos la clase que implementa el metodo para obtener los registros
+ 			usuario = this.usuarioDAO.obtener("elver");
 			assertTrue(usuario!=null);
  		}
  		catch(Exception e){
