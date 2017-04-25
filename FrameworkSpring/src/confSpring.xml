@@ -52,4 +52,12 @@
 		<property name="clienteDAO" ref="ClienteDAOImp" />
 		<property name="usuarioDAO" ref="UsuarioDAOImp" />
 	</bean>
+<<<<<<< HEAD
+	<!-- Se pone el paquete donde estan configurados los servicios web -->
+	<context:component-scan base-package="co.edu.udea.iw.ws"></context:component-scan>
+=======
+	<bean id="usuarioBL" class="co.edu.udea.iw.bl.UsuarioBL">
+		<property name="usuarioDAO" ref="UsuarioDAOImp" />
+	</bean>
+>>>>>>> c1239bf31068dabd33386cbc22178bcd021498d6
 </beans>

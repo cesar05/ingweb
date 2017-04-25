@@ -23,7 +23,7 @@ public class ClienteBL {
 
 		//Validando los datos para garantizar que no sean nulos o vacios 
 		if(cedula==null || "".equals(cedula)){
-			throw new MyException("La cÃ©dula no puede estar vacia");
+			throw new MyException("La cédula no puede estar vacia");
 		}
 		else if(nombre==null || "".equals(nombre)){
 			throw new MyException("El nombre no puede estar vacia");

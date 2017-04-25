@@ -46,16 +46,16 @@ public class ClienteBLTest {
 	}
 	
 	public void testGuardar(){
-		//metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
+		//Metodo para para probar que si devuelva registros cuando hay datos en la base de datos				
 		
  		Cliente Cliente = null;
  		try{ 			
  			assertTrue(this.clientebl.guardar(
- 					"1047",
+ 					"1050",
  					"Pedro Pablo", 
  					"Jaramillo",
  					"udea@udea.com",
- 					"1000"));			
+ 					"800"));			
  			
  		}
  		catch(Exception e){
