@@ -52,18 +52,14 @@
 		<property name="clienteDAO" ref="ClienteDAOImp" />
 		<property name="usuarioDAO" ref="UsuarioDAOImp" />
 	</bean>
-<<<<<<< HEAD
+
 	<bean id="usuarioBL" class="co.edu.udea.iw.bl.UsuarioBL">
 		<property name="usuarioDAO" ref="UsuarioDAOImp" />
 	</bean>
-=======
-<<<<<<< HEAD
+	<!-- decirle a spring que se van a realizan las transaccion y el transaction manager en el id del bean que se encarga de las transacciones -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
 	<!-- Se pone el paquete donde estan configurados los servicios web -->
 	<context:component-scan base-package="co.edu.udea.iw.ws"></context:component-scan>
-=======
-	<bean id="usuarioBL" class="co.edu.udea.iw.bl.UsuarioBL">
-		<property name="usuarioDAO" ref="UsuarioDAOImp" />
-	</bean>
->>>>>>> c1239bf31068dabd33386cbc22178bcd021498d6
->>>>>>> otro2
+
 </beans>

@@ -1,12 +1,15 @@
 package co.edu.udea.iw.bl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import exception.MyException;
 
 /*
- * author: César Muñoz Roldan
+ * author: Cï¿½sar Muï¿½oz Roldan
  */
+@Transactional//para que spring y hiberne sepan que va a realizar operaciones en la base de datos
 public class UsuarioBL {
 	
 	//Variable que nos permite consultar el usuario dado el login en la base de datos
@@ -14,20 +17,25 @@ public class UsuarioBL {
 	//Variable que nos permite manipular los objetos tipo Usuario
 	private Usuario usuario;
 	
-	/*Método que nos permite validar el login y el password del usuario dado, en caso de que la validacion sea 
+	/*Mï¿½todo que nos permite validar el login y el password del usuario dado, en caso de que la validacion sea 
 	 *correcta el metodo retorna true en caso contrario false*/
 	
 	public boolean login(String login,String pass)throws MyException{
-		//Obtener el usuario segun el login
-		usuario=usuarioDAO.obtener(login);
-		//Valido que el usuario exista efectivamente
-		if(usuario!=null){
-			/*En caso de que el pass enviado como parametro sea igual al password del usuario 
-			 * que retorno la base de datos la comaparacion devuelve true en caso contrario false*/			 
-			return usuario.getContrasena().equals(pass);				
+		try{
+			//Obtener el usuario segun el login
+			usuario=usuarioDAO.obtener(login);
+			//Valido que el usuario exista efectivamente
+			if(usuario!=null){
+				/*En caso de que el pass enviado como parametro sea igual al password del usuario 
+				 * que retorno la base de datos la comaparacion devuelve true en caso contrario false*/			 
+				return usuario.getContrasena().equals(pass);				
+			}
+			throw new MyException("Usuario no valido");
 		}
-		//Retorno null en caso de que el usuario no exista
-		return false;
+		catch(MyException e){
+			throw new MyException(e);
+			//Retorno null en caso de que el usuario no exista
+		}		
 	}
 
 	public UsuarioDAO getUsuarioDAO() {

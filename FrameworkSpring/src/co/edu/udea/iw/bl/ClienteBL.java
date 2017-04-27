@@ -1,7 +1,10 @@
 package co.edu.udea.iw.bl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.dao.ClienteDAO;
 import co.edu.udea.iw.dao.UsuarioDAO;
@@ -9,6 +12,10 @@ import exception.MyException;
 import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.dto.Usuario;
 
+/*
+ * author: Cï¿½sar Muï¿½oz Roldan
+ */
+@Transactional//para que spring y hiberne sepan que va a realizar operaciones en la base de datos
 public class ClienteBL {
 	
 	private ClienteDAO clienteDAO;
@@ -23,7 +30,7 @@ public class ClienteBL {
 
 		//Validando los datos para garantizar que no sean nulos o vacios 
 		if(cedula==null || "".equals(cedula)){
-			throw new MyException("La cédula no puede estar vacia");
+			throw new MyException("La cï¿½dula no puede estar vacia");
 		}
 		else if(nombre==null || "".equals(nombre)){
 			throw new MyException("El nombre no puede estar vacia");

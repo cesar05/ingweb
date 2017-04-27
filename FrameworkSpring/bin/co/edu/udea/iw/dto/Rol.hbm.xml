@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:20:52 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Rol" table="roles">
+    	<!-- el <id> es para la llave primaria -->
+        <id name="codigo" type="java.lang.String"><!-- nombre de la variable de la clase -->
+            <column name="CODIGO" precision="12" /><!-- nombre de columna de la tabla de la BD -->
+            <!--<generator class="assigned" /> si queremos que hibernate utilice autoincremento -->
+        </id>
+        <!-- el <property> es para los otros campos -->
+        <property name="nombre" type="java.lang.String"><!-- nombre de la variable de la clase -->
+            <column name="NOMBRE" length="50" not-null="true"/><!-- nombre de columna de la tabla de la BD -->
+        </property>       
+    </class>
+</hibernate-mapping>

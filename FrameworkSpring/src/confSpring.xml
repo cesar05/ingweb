@@ -56,7 +56,9 @@
 	<bean id="usuarioBL" class="co.edu.udea.iw.bl.UsuarioBL">
 		<property name="usuarioDAO" ref="UsuarioDAOImp" />
 	</bean>
-
+	<!-- decirle a spring que se van a realizan las transaccion y el transaction manager en el id del bean que se encarga de las transacciones -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
 	<!-- Se pone el paquete donde estan configurados los servicios web -->
 	<context:component-scan base-package="co.edu.udea.iw.ws"></context:component-scan>
 
